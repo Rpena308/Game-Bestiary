@@ -1,0 +1,104 @@
+﻿@model IEnumerable<DataObjects.Beast>
+
+<script>
+
+</script>
+<p>
+    @Html.ActionLink("Create New", "CreateBeast")
+</p>
+<div style="overflow-x:auto">
+    <table class="table">
+        <tr style="border:solid">
+            <th>
+                @Html.DisplayNameFor(model => model.GameID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlignmentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BeastTypeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BeastSubTypeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TerrainID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BeastSizeID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BeastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChallengeRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Treasure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Experience)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BeastDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Active)
+            </th>
+            <th>
+                Management
+            </th>
+        </tr>
+
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GameID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AlignmentID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BeastTypeID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BeastSubTypeID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TerrainID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BeastSizeID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BeastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChallengeRating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Treasure)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Experience)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BeastDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Active)
+                    </td>
+                    <td align="center">
+                        <button>@Html.ActionLink("Edit", "Edit", new { id = item.BeastID })</button>
+                        <button>@Html.ActionLink("Details", "Details", new { id = item.BeastID })</button>
+                        <button>@Html.ActionLink("Delete", "Delete", new { id = item.BeastID })</button>
+                    </td>
+                </tr>
+            }
+        }
+    </table>
+
+</div>

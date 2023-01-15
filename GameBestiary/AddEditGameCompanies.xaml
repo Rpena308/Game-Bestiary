@@ -1,0 +1,55 @@
+﻿<Window x:Class="GameBestiary.AddEditGameCompanies"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameBestiary"
+        mc:Ignorable="d"
+        Title="AddEditGameCompanies" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1" HorizontalAlignment="Right" Padding="5 5 10 10"
+               VerticalAlignment="Center">Game Company ID:</Label>
+        <TextBox x:Name="txtGameCompanyID" Grid.Row="1" Grid.Column="1" Margin="10 5 40 4"
+                 VerticalContentAlignment="Center"/>
+
+        <Label Grid.Row="2" HorizontalAlignment="Right" Padding="5 5 10 10"
+               VerticalAlignment="Center">Email:</Label>
+        <TextBox x:Name="txtEmail" Grid.Row="2" Grid.Column="1" Margin="10 5 40 4"
+                 VerticalContentAlignment="Center"/>
+
+        <Label Grid.Row="3" HorizontalAlignment="Right" Padding="5 5 10 10"
+               VerticalAlignment="Center">Website:</Label>
+        <TextBox x:Name="txtWebsite" Grid.Row="3" Grid.Column="1" Margin="10 5 40 4"
+                 VerticalContentAlignment="Center"/>
+
+        <Label Grid.Row="4" HorizontalAlignment="Right" Padding="5 5 10 10"
+               VerticalAlignment="Center">Active:</Label>
+        <CheckBox x:Name="chkActive" Grid.Row="4" Grid.Column="1" Margin="10 5 40 4"
+                 VerticalContentAlignment="Center"/>
+        <Grid Grid.Row="5" Grid.Column="1" Margin="10 5 80 4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnEditSave" Margin="0 0 10 0" Click="btnEditSave_Click">
+                Save
+            </Button>
+            <Button x:Name="btnCancel" Grid.Column="1" Click="btnCancel_Click">
+                Cancel
+            </Button>
+        </Grid>
+    </Grid>
+</Window>

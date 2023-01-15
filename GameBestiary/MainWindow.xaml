@@ -1,0 +1,78 @@
+﻿<Window x:Class="GameBestiary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameBestiary"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="lblGreeting" 
+                   Content="You are not logged in."
+                   Padding="20 5 0 0" Margin="-5px" FontSize="20"/>
+            <TextBox x:Name="txtEmail" Grid.Row="0" Grid.Column="1"
+                     Margin="5 5 5 0"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"/>
+            <PasswordBox x:Name="pwdPassword" Grid.Row="0" Grid.Column="2"
+                     Margin="5 5 5 0"
+                     HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"/>
+            <Button x:Name="btnLogin" Grid.Row="0" Grid.Column="3"
+                    Margin="5 5 20 0" Content="Login" Click="btnLogin_Click"/>
+            <Label x:Name="lblEmail" Grid.Row="1" Grid.Column="1"
+                   VerticalAlignment="Top" Content="Email"
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold"/>
+            <Label x:Name="lblPassword" Grid.Row="1" Grid.Column="2"
+                   VerticalAlignment="Top" Content="Password"
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold"/>
+        </Grid>
+        <TabControl x:Name="tabsetMain" Grid.Row="3">
+            <TabItem x:Name="tabBeast" Header="Beasts" GotFocus="tabBeast_GotFocus">
+                <Grid>
+                    <DataGrid x:Name="datAllBeasts" SelectionMode="Single" ToolTip="Double-Click a Beast to View Details." MouseDoubleClick="datAllBeasts_MouseDoubleClick" IsReadOnly="True"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabAdmin" Header="User Administration" GotFocus="tabAdmin_GotFocus">
+                <Grid>
+                    <DataGrid x:Name="datAllUsers" SelectionMode="Single" ToolTip="Double-Click a User to View Details." MouseDoubleClick="datAllUsers_MouseDoubleClick" IsReadOnly="True"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabGameCompany" Header="Game Company" GotFocus="tabGameCompany_GotFocus">
+                <Grid>
+                    <DataGrid x:Name="datAllGameCompanies" SelectionMode="Single" ToolTip="Double-Click a Company to View Details." IsReadOnly="True" MouseDoubleClick="datAllGameCompanies_MouseDoubleClick"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tabGame" Header="Game" GotFocus="tabGame_GotFocus">
+                <Grid>
+                    <DataGrid x:Name="datAllGames" SelectionMode="Single" ToolTip="Double-Click a Game to View Details." IsReadOnly="True" MouseDoubleClick="datAllGames_MouseDoubleClick"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StatusBar Grid.Row="5">
+            <StatusBarItem x:Name="statMessage" Content="Welcome. Please log in." 
+                           Padding="20,0,0,0" />
+        </StatusBar>
+    </Grid>
+</Window>

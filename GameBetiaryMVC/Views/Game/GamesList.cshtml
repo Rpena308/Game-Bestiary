@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DataObjects.Game>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GameCompanyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GameVersion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th></th>
+    </tr>
+
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameCompanyID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GameVersion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Active)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.GameID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.GameID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.GameID })
+                </td>
+            </tr>
+        }
+    }
+    </table>
